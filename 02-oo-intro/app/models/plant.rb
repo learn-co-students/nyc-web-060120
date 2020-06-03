@@ -3,8 +3,8 @@ require 'pry'
 
 class Plant
     # binding.pry
-    attr_reader :type, :height
-    attr_accessor :name
+    # attr_reader :type, :height
+    # attr_accessor :name
 
     def initialize(name, type, height=10)
         @name = name 
@@ -12,21 +12,21 @@ class Plant
         @height = height
     end
 
-    # def name 
-    #     @name
-    # end
-    # def height
-    #     @height
-    # end
+    def name 
+        @name
+    end
+    def height
+        @height
+    end
 
-    # def name=(name)
-    #     @name = name
-    # end
+    def name=(name)
+        @name = name
+    end
 
 
 end
 
-plant = Plant.new("Okra", "Annual")
+# plant = Plant.new("Okra", "Annual")
 
 binding.pry
 
