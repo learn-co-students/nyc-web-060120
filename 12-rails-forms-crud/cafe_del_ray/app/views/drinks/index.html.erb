@@ -1,7 +1,15 @@
 <h1>Drinks Index</h1>
 
+<%= link_to 'Create Drink', new_drink_path %>
+<hr>
+
 <% @drinks.each do |drink| %>
 
-  <p><%= drink.name %></p>
+  <p><%# link_to drink.name, "/drinks/#{drink.id}"  %></p>
+  <p><%= link_to drink.name, drink_path(drink.id)  %></p>
   
 <% end %>
+
+
+  <%# <a href="https://www.espn.com/">ESPN</a> %>
+  <%# <a href="/drinks/2">drink name</a> %>

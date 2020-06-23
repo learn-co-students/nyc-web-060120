@@ -1,0 +1,9 @@
+<h1>Show Page</h1>
+
+<h3><%= @drink.name %></h3>
+<p>Price: <%= @drink.price %></p>
+<p>Size: <%= @drink.size %></p>
+
+<%= link_to "Edit This Drink", edit_drink_path(@drink) %>
+<br>
+<%= link_to "Index Page", drinks_path %>

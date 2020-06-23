@@ -10,3 +10,5 @@
 Drink.create(name: 'Americano', price: rand(10..25), size: 'grande')
 Drink.create(name: 'Cortado', price: rand(10..25), size: 'grande')
 Drink.create(name: 'Latte', price: rand(10..25), size: 'grande')
+
+

@@ -18,7 +18,7 @@ Drinks -< UserDriks >- Users
 - [] Create our model using `rails g model`
 - [] Work on CRUD, focus on routes and ActionView helpers
   - [] Read
-    - [] Views -> Index, Show
+    - [X] Views -> Index, Show
     - [] Views -> New, Edit 
     - [] Review `link_to` and path helpers
   - [] Create

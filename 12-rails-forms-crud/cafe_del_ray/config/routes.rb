@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  get 'drinks/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/drinks', to: 'drinks#index'
+  # resources :drinks, only: [:new, :show, :index]
+
+  get '/drinks', to: 'drinks#index', as: 'drinks'
+
+  get '/drinks/new', to: 'drinks#new', as: 'new_drink'
+  post '/drinks', to: 'drinks#create'
   
+  get '/drinks/:id', to: 'drinks#show', as: 'drink'
+
+  get '/drinks/:id/edit', to: 'drinks#edit', as: 'edit_drink'
+  patch '/drinks/:id', to: 'drinks#update'
 end
