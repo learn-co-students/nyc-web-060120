@@ -1,0 +1,12 @@
+<h1>User Show Page</h1>
+
+<h3><%= @user.name %></h3>
+<p><%= @user.motto %></p>
+<img src="<%= @user.img_url %>" alt="profile pic">
+
+
+<h1>My Drinks</h1>
+
+<% @user.favorites.each do |favorite|%>
+  <p><%= favorite.drink.name %> || <%= favorite.rating%> </p>
+<% end %>
