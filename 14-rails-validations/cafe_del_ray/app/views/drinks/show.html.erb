@@ -1,0 +1,16 @@
+<div class='show-body'>
+  <h1>Show Page</h1>
+
+  <h3><%= @drink.name %></h3>
+  <p>Price: <%= @drink.price %></p>
+  <p>Size: <%= @drink.size %></p>
+
+  <img class="show-img" src="<%= @drink.img_url %>" alt="coffee pic">
+
+  <%= button_to "Delete Drink", drink_path(@drink), method: :delete %>
+                                  
+  <br>
+  <%= link_to "Edit This Drink", edit_drink_path(@drink) %>
+  <br>
+  <%= link_to "Index Page", drinks_path %>
+</div>

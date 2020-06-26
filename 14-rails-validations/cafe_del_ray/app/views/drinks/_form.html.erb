@@ -1,0 +1,21 @@
+<div class='error'>
+  <% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= form_for @drink do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+  <%= f.label :size %>
+  <%= f.text_field :size %>
+
+  <%= f.submit %>
+<% end %>
+
