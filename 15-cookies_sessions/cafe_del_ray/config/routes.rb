@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :favorites, only: [:new, :create]
   resources :users, only: [:show, :new, :create]
   
+  patch '/sessions/page_reset', to: 'sessions#reset_page_count', as: 'sessions_reset'
+
   # get '/drinks', to: 'drinks#index', as: 'drinks'
 
   # get '/drinks/new', to: 'drinks#new', as: 'new_drink'

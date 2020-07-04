@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfXaBtv1b5GQnmdYYykwz42EEcmrR2soWlIx2T9bckf0kk5pLz");
+
+}
+
+.index-img {
+  max-width: 150px;
+}
+
+.show-img {
+  max-width: 25%;
+  background-color: rgba(137,219,212, 0.7);
+  padding: 30px;
+  border-radius: 25px;
+}
+
+ .index-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+  justify-content: center;
+  margin-top: 20px;
+  max-width: 960px;
+  width: 95%;
+  border-radius: 25px;
+  margin: 0px auto;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.index-tile {
+  max-width: 200px;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 3px;
+  background-color: rgba(137,219,212, 0.7);
+  /* background: rgba(255, 255, 255, 0.7); */
+  /* background-color: rgba(255, 255, 255, 0.7); */
+}
+
+.nav {
+  background: rgba(255, 255, 255);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  margin: 0px auto;
+  margin-bottom: 10px;
+  max-width: 960px;
+  padding: 2.25%; 
+  width: 85%;
+  
+  font-family: molle;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 20px;
+}
+
+.logo {
+  max-height: 200px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.show-body, form, .error {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  margin: 0px auto;
+  margin-bottom: 10px;
+  max-width: 960px;
+  padding: 2.25%; 
+  width: 85%;
+
+  /* font-family: molle; */
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 20px;
+}

@@ -1,4 +1,13 @@
 # Rails Validations
+
+## AMA 
+- ✅strong params
+- ✅collection_select => select html tag
+- validations
+
+### Bonus
+- field_for (.build)
+
 ===
 
 ## SWBATs
