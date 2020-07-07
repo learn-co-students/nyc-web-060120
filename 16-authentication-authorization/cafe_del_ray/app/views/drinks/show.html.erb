@@ -1,0 +1,28 @@
+<% if session[:page_count] < 4 %>
+  <div class='show-body'>
+    <h1>you have <%= 3 - session[:page_count] %> Views left</h1>
+      <h1>Show Page</h1>
+
+      <h3><%= @drink.name %></h3>
+      <p>Price: <%= @drink.price %></p>
+      <p>Size: <%= @drink.size %></p>
+
+      <img class="show-img" src="<%= @drink.img_url %>" alt="coffee pic">
+
+      <%= button_to "Delete Drink", drink_path(@drink), method: :delete %>
+                                      
+      <br>
+      <%= link_to "Edit This Drink", edit_drink_path(@drink) %>
+      <br>
+      <%= link_to "Index Page", drinks_path %>
+  </div>
+<% else %>
+
+   <div class='show-body'>
+    <h1>AD</h1>
+    <iframe width="966" height="543" src="https://www.youtube.com/embed/2ovhbT-Iulc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <%= button_to "I super promise I watched this ad", sessions_reset_path, method: :patch %>
+
+<% end %>

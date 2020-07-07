@@ -1,0 +1,13 @@
+
+<div class="index-container">
+  <% @drinks.each do |drink| %>
+    <div class="index-tile">
+      <p><%= link_to drink.name, drink_path(drink.id)  %></p>
+      <img class="index-img" src="<%= drink.img_url %>" alt="coffee pic">
+    </div>  
+  <% end %>
+</div>
+
+
+  <%# <a href="https://www.espn.com/">ESPN</a> %>
+  <%# <a href="/drinks/2">drink name</a> %>

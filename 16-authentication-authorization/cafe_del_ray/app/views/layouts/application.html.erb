@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CafeDelRay</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='nav'>
+      <img class='logo' src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcResAanW8J5bQEYNGtEQZQHtIEC281_QttVdw&usqp=CAU" alt="cc">
+    </div>
+
+      <ul>
+        <li><%= link_to 'User Home', users_path %></li>
+        <li><%= link_to 'Drink Home', drinks_path %></li>
+        <li><%= link_to 'New Drink', new_drink_path %></li>
+        <li><%= link_to 'New Fav', new_favorite_path %></li>
+
+        <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+        
+      </ul>
+    
+    <%= yield %>
+  </body>
+</html>

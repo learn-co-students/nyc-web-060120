@@ -1,0 +1,17 @@
+
+
+<%= form_for @user do |f|  %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.label :motto %>
+  <%= f.text_field :motto %>
+
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %>
+
+  <%= f.submit %>
+<% end %>

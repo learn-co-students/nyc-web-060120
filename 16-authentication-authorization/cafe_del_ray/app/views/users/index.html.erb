@@ -1,0 +1,9 @@
+<div class="index-container">
+  <% @users.each do |user| %>
+    <div class="index-tile">
+      <p><%= link_to user.name, user_path(user.id)  %></p>
+      <img class="index-img" src="<%= user.img_url %>" alt="profile pic">
+      <%= button_to 'X', user_path(user), method: :delete %>
+    </div>  
+  <% end %>
+</div>
