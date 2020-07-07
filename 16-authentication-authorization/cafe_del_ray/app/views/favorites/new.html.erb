@@ -7,9 +7,6 @@
   <%= f.label :rating %>
   <%= f.number_field :rating %>
 
-  <%= f.label :user_id %>
-  <%= f.collection_select :user_id, @users, :id, :name %>
-
   <%= f.label :drink_id %>
   <%= f.collection_select :drink_id, @drinks, :id, :name_and_size %>
 

@@ -20,7 +20,13 @@
         <li><%= link_to 'New Drink', new_drink_path %></li>
         <li><%= link_to 'New Fav', new_favorite_path %></li>
 
-        <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+        <% if @current_user %>
+          <li class='right'>Welcome! <%= @current_user.name %></li>
+          <li class='right'><%= link_to "log-out", sessions_logout_path, method: :delete %></li>
+        <% else %>
+          <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+          <li class='right'><%= link_to 'login', new_login_path %></li>
+        <% end %>
         
       </ul>
     

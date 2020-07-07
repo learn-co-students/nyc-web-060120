@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :favorites, only: [:new, :create]
   resources :users, only: [:show, :new, :index, :create, :destroy]
   
+  get '/sessions/new', to: 'sessions#login', as: 'new_login'
+  post '/sessions', to: 'sessions#create', as: 'sessions'
+  delete '/sessions/logout', to: 'sessions#logout', as: 'sessions_logout'
   patch '/sessions/page_reset', to: 'sessions#reset_page_count', as: 'sessions_reset'
 
   # get '/drinks', to: 'drinks#index', as: 'drinks'
