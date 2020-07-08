@@ -17,12 +17,5 @@
       <%= link_to "Index Page", drinks_path %>
   </div>
 <% else %>
-
-   <div class='show-body'>
-    <h1>AD</h1>
-    <iframe width="966" height="543" src="https://www.youtube.com/embed/2ovhbT-Iulc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-
-  <%= button_to "I super promise I watched this ad", sessions_reset_path, method: :patch %>
-
+  <%= render 'ad' %>
 <% end %>
