@@ -34,19 +34,26 @@ console.log("Welcome to Mod 3")
 
  **Some data types
  - null
-
+  - essentially the same as "nil" in Ruby
 
  
  - Number
-
+  - only the one Number class
+  - 0 is falsey
 
  
  - String
-
+  - can use "" or ''
+  - template literal `` - this allows us to interpolate things into the straing
+  - Ruby
+    - "#{something} is great"
+  - JS
+    - `${something} is great`
 
 
  - Object Literals
-
+  - equivalent to a Hash in Ruby
+  - has dot notion get/set as well
 
  
  - Array
@@ -54,7 +61,7 @@ console.log("Welcome to Mod 3")
 
 
  - undefined
-
+  - represents the as-of-yet defined value of something
 
 
  **Functions
@@ -63,13 +70,17 @@ console.log("Welcome to Mod 3")
 
 */
 
-// function declaration, named function
-
-
-
+// function declaration
+function sayHi(name){
+  return `Hi there ${name}`
+}
 
 // function expression
-
-
+let sayHello = function(name){
+  return `Hello there ${name}`
+}
 
 // arrow functions
+let sayHowdy = (name) => {
+  return `Howdy ${name}`
+}
