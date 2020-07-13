@@ -78,48 +78,54 @@
 - `document.getElementById`
   - get the `div` with the id `movie-container`
 
-
-
-```javascript
-
-```
-
-- `node.getElementsByTagName`
-  - get the Matrix `li` element
-
-
+  - searches the document and will return the first (should be only) thing with the matching id
 
 ```javascript
-
+let container = document.getElementById("movie-container")
 ```
 
+- `element.getElementsByTagName`
+  - get all the `li` element
 
-- `node.getElementsByClassName`
+  - returns a collection of the items that match the tag name provided
+
+```javascript
+let list = document.getElementById("movie-list")
+list.getElementsByTagName("li")
+```
+
+  - get the Matrix `li` 
+
+  ```javascript
+  let matrix = document.getElementsByTagName("li")[1]
+  ```
+
+
+- `element.getElementsByClassName`
   - get all the `li` elements with the class `movie`
 
-
+  - returns a collection of elements that match the class name provided
 
 ```javascript
-
+document.getElementsByClassName('movie')
 ```
 
-- `node.querySelector`
-  - get the up-vote `button` from within the jaws `li`
+- `element.querySelector`
+  - get the first up-vote `button`
 
-
+  - return the first element that match the query selector
 
 ```javascript
-
+document.querySelector('.up-vote')
 ```
   
-- `node.querySelectorAll`
+- `element.querySelectorAll`
   - get the all the `up-vote` elements
   
-
-
+  - returns a node list of items that match the query selector
 
 ```javascript
-
+document.querySelectorAll(".up-vote")
 ```
 
   - We can also combine selectors for more specificity:
@@ -134,10 +140,12 @@
 
 - "https://i.ytimg.com/vi/aaqzPMOd_1g/maxresdefault.jpg"
 
-
+1. get the image from the DOM somehow
+2. change the picture being displayed by the img tag
 
 ```javascript
-
+let image = document.querySelector("#welcome-image")
+image.src = "https://i.ytimg.com/vi/aaqzPMOd_1g/maxresdefault.jpg"
 ```
 ---
 
