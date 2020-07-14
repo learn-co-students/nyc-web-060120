@@ -152,10 +152,12 @@ image.src = "https://i.ytimg.com/vi/aaqzPMOd_1g/maxresdefault.jpg"
 #### DELETE:
 - remove the Jaws movie
 
-
+1. grab the jaws movie (li) from the DOM
+2. figure out how to remove it
 
 ```javascript
-
+const jaws = document.querySelector("li")
+jaws.remove()
 ```
 
 ---
