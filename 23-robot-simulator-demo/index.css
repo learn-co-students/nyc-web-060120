@@ -1,0 +1,23 @@
+body {
+  display: grid;
+  grid-template-columns: 5fr 5fr;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.tile {
+  border-style: solid;
+  border-width: 1px;
+  height: 5vw;
+}
+
+#robot {
+  background-image: url("https://cdn2.iconfinder.com/data/icons/cute-robot-3/512/937-23-128.png");
+  background-repeat: no-repeat;
+  background-size: 5vw 5vw;
+  background-position: center;
+
+}
