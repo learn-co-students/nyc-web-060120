@@ -2,7 +2,7 @@ console.log("Delegating is just getting someone else to do something you don't w
 
 
 document.addEventListener("DOMContentLoaded", function(e){
-  const movieList = {document.getElementById('movie-list')}
+  const movieList = document.getElementById('movie-list')
   console.log(movieList)
   const goonies = {
     title: "The Goonies",
