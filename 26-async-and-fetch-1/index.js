@@ -32,9 +32,9 @@ fetch(url)
 .catch(error => {
   console.log("There's been an error: ", error)
 })
-// .all(data => {
-//   console.log("Mystery!!", data)
-// })
+.finally(data => {
+  console.log("Mystery!!", data)
+})
 
 
 console.log("hey there")
@@ -51,18 +51,18 @@ const data = {
 
 // POST to /dogs/:id to create a new dog record
 
-fetch(`${otherUrl}/${id}`, {
-  method: "POST",
-  headers: {
-    "content-type": "application/json",
-    "accept": "application/json"
-  },
-  body: JSON.stringify(data)
-})
-.then(response => response.json())
-.then(dog => {
-  const name = dog.name
-  alert("Yo, your dog's name is " + name)
-  // render the data to the page as HTML
-  // or at least make a call to a function that does that eg., renderDog(dog)
-})
+// fetch(`${otherUrl}/${id}`, {
+//   method: "POST",
+//   headers: {
+//     "content-type": "application/json",
+//     "accept": "application/json"
+//   },
+//   body: JSON.stringify(data)
+// })
+// .then(response => response.json())
+// .then(dog => {
+//   const name = dog.name
+//   alert("Yo, your dog's name is " + name)
+//   // render the data to the page as HTML
+//   // or at least make a call to a function that does that eg., renderDog(dog)
+// })
