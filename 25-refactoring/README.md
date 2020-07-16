@@ -1,101 +1,145 @@
+# Just a little quiz thing 🤷🏻‍♂️
 
-## Event Bubbling and Event Delegation
+## DOM
 
-### Learning Goals
+### 1. What will happen when you run the following code?
 
-- [ ] Describe event bubbling/propogation
-- [ ] Implement event delegation on a parent node
-- [ ] Use control flow to differentiate behavior on the same event listener
-- [ ] Add datasets to elements 
-- [ ] Access HTML elements using datasets
+```javascript
+const buttons = document.getElementsByClassName('button')
+buttons.addEventListener("click", function(e){
+    console.log(e.target)
+})    
+```
 
-### Event Propogation 
+- this will give you a "addEventListener" is not a function error
 
-- Given a series of buttons deeply nested in some `<div></div>` tags on our page:
+### Use the following HTML to answer the rest of the questions.
 
 ```html
-<div id="helicopter-parent">
-  <div>
-    <br>
-    <div>
-      <br>
-      <div>
-        <p>HI</p>
-        <div>
-          <button data-name="alert">Alert ME</button>
-          <button data-name="log">Console Log something</button>
-          <button data-name="error">Console Error</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="container">
+    <h4>This is a cool heading!</h4>
+    <ul class="list">
+        <li>The first list item</li>
+        <li>The second list item</li>
+    </ul>
+    <p>This is a random "p" tag with a <span>SPAN</span> inside of it for some reason!</p>
+    <li>This list item clearly makes no sense here!!! Who wrote this horrible code?</li>
 </div>
 ```
 
-- How might we listen for events on those buttons?
-  - We **could** find all the buttons, loop over that collection and attach several event listeners for our buttons. This should feel messy and hacky. There must be a better way!™
+### 2. Provide the JavaScript code that would get the second list item from the DOM and save it to a variable called `secondListItem`.
 
-### What about Event Delegation?
+```javascript
+const secondListItem = document.querySelectorAll('ul > li')[1]
+const secondListItem = document.getElementsByTageNae('li')[1]
+```
 
-![event delegation diagram](https://javascript.info/article/bubbling-and-capturing/eventflow@2x.png)
+### 3. Once you have the `secondListItem` node, how could you traverse the DOM tree to get the `<p>` tag.
 
-- The diagram above outlines the flow of JS events from the target all the way up the DOM (tree) to the topmost node, the `Document`
-  - In other words, **every HTML element will know about everything that happens to its children**
+```javascript
+secondListItem.closest("#container").querySelector("p")
+```
 
-- Instead of iterating over the buttons and attaching duplicate event handlers, we can create **one** event handler to Rule Them All™:
+### 4. What query could you do to get just the `li` tags that are inside the `ul` and not that random janky one that's near the bottom for some reason?
 
-```js
-const helicopterNode = document.getElementById('helicopter-parent')
+```javascript
+document.querySelectorAll('ul li')
+```
 
-helicopterNode.addEventListener('click', function(event) {
-  console.log(event.target) //event target will be whatever node was clicked
+## Events
+
+### 1. Why do we use a `DOMContentLoaded` listener?
+
+- to prevent our JS from being executed before all the HTML has been loaded to the page
+- there are other strategies we could use if we wanted (e.g., window -> load event, defer keyword)
+
+### 2. What type of element does a `submit` event happen to?
+
+- `submit` events only happen on a form
+
+### 3. What attribute of an `input` element can we use to easily retrieve data from form inputs?
+
+- the name attribute 
+
+```html
+<input type="text" name="breed">
+```
+
+```javascript
+const form = document.querySelector('form')
+const breed = form.breed.value // => whatever the user inputted in this field
+```
+- 
+
+### 4. What are the 2 required parameters we have to pass into a call to `addEventListener`?
+
+- 1. the type of event as a string, this is a controlled phrase
+- 2. the callback function to be executed when said event happens to said element
+
+## Fetch
+
+### 1. Write the code to do a GET request to "notarealwebsite.com" using fetch and log the response from the server to the console.
+
+```javascript
+fetch("notarealwebsite.com")
+.then(response => response.json())
+.then(data => console.log(data))
+```
+
+### 2. Following RESTful conventions (see [restular.com](http://www.restular.com) if you need a bit of help with that), write the fetch request to update the `user` record with an id of 1 at the URL "notarealwebsite.com".
+
+```javascript
+fetch("notarealwebsite.com/users/1", {
+    method: "PATCH",
+    headers: {
+        "content-type": "application/json",
+        "accept": "application/json"
+    },
+    body: JSON.stringify({ eyeColor: "brown" })
+})
+.then(response => response.json())
+.then(console.log)
+.catch(error => {
+    console.log("there was an error: ", error)
+})
+
+```
+
+### 3. What effect does the following fetch request have in the database? What does the following fetch request *return*? 
+
+- will delete the dog record with an id of 25
+- it will return a Promise
+
+
+```javascript
+fetch("notarealwebsite.com/dogs/25", {
+    method: "DELETE"
 })
 ```
 
-- Now we can introduce some control flow to our click handler and decide what to do based on which button was clicked:
+## Datasets
 
-```js
-helicopterNode.addEventListener('click', function(event) {
-  // i do not need to prevent the click default action
-  //event.target is the node that was clicked
-  // our buttons have a key of dataset -> { name: 'alert' }
-  // i am checking the value of button.dataset.name and deciding what to do based on what i find
+### 1. Write the HTML to create a `div` element with a dataset property of "awesome" set to a value of "Steven is".
 
-  if (event.target.dataset.name === 'alert') {
-    window.alert('HI')
-  } else if (event.target.dataset.name === 'log') {
-    console.log('HI')
-  } else if (event.target.dataset.name === 'error') {
-    console.error('HI')
-  }
-})
+```HTML
+
 ```
 
-- _nice_
+### 2. In JavaScript, how would you get the `div` element from the question above from the DOM using `document.querySelector` and the dataset?
 
-![nice](https://media.giphy.com/media/3M9CR4S2KFNyOIqHGg/giphy.gif)
+```javascript
 
----
+```
 
-## External Resources:
+### 3. Write the JavaScript to create a `marquee` element with a dataset property of "jaws" set to a value of "great movie".
 
-- [MDN Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
-- [MDN Event reference](https://developer.mozilla.org/en-US/docs/Web/Events)
-- [MDN DOMContentLoaded Reference](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)
-- [MDN `addEventListener` Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-- [MDN Article on `Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event)
-- [MDN Article on the `submit` event](https://developer.mozilla.org/en-US/docs/Web/Events/submit)
-- [MDN Article on `input` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input))
-- [MDN Article on `createElement`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
-- [MDN Article on `textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
-- [MDN Article on Dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
-- [JavaScript.info Article on Event Bubbling](https://javascript.info/bubbling-and-capturing)
+```javascript
 
+```
 
+### 4. In JavaScript, how would you access the "jaws" dataset property? How would you change its value to "overrated maybe"?
 
+```javascript
 
-
-
-
+```
 
