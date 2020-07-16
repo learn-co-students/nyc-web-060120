@@ -30,7 +30,7 @@ buttons.addEventListener("click", function(e){
 ### 2. Provide the JavaScript code that would get the second list item from the DOM and save it to a variable called `secondListItem`.
 
 ```javascript
-const secondListItem = document.querySelectorAll('ul > li')[1]
+const secondListItem = document.querySelectorAll('ul li')[1]
 const secondListItem = document.getElementsByTageNae('li')[1]
 ```
 
