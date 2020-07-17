@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   
     addBtn.addEventListener("click", () => {
-      // hide & seek with the form--clicking the add button toggles this variable between false false and true,
+      // hide & seek with the form--clicking the add button toggles this variable between false and true,
     //   and when it's true, we can see the new toy form. If it's false, we simply don't display its contents(the else statement below)
       addToy = !addToy;
       if (addToy) {
