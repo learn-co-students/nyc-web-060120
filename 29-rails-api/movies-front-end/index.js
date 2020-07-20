@@ -1,9 +1,9 @@
-console.log("Forms and Databases are, like, super rad 💯!")
+console.log("Rails is cool 🚂")
 
 
 document.addEventListener("DOMContentLoaded", function(e){
   const movieList = document.getElementById('movie-list')
-  const baseUrl = "http://localhost:3000/movies"
+  const baseUrl = "http://localhost:3000/api/v1/movies"
 
   
   function renderMovie(movieObj){
@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.addEventListener("click", function(e){
       if(e.target.matches('.up-vote')){
 
-        const id = parentLi.dataset.id
         const clickedButton = e.target
         const parentLi = clickedButton.parentElement
+        const id = parentLi.dataset.id
         const scoreSpan = parentLi.querySelector('span')
         const newScore = parseInt(scoreSpan.textContent, 10) + 1
         scoreSpan.textContent = newScore
@@ -55,9 +55,20 @@ document.addEventListener("DOMContentLoaded", function(e){
         })
 
       } else if(e.target.dataset.purpose === "delete"){
-
+        
         const deleteButton = e.target
-        deleteButton.parentElement.remove()
+        const id = deleteButton.parentElement.dataset.id
+
+        fetch(`${baseUrl}/${id}`,{
+          method: "DELETE"
+        })
+        .then(response => response.json())
+        .then(data => {
+          deleteButton.parentElement.remove()
+        })
+
+
+
 
       } else if(e.target.matches('#show-form')){
         const button = e.target
