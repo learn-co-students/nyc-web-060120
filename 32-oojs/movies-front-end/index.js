@@ -5,31 +5,10 @@ document.addEventListener("DOMContentLoaded", function(e){
   const movieList = document.getElementById('movie-list')
   const baseUrl = "http://localhost:3000/api/v1/movies"
 
-  
-  function renderMovie(movieObj){
-    const movieLi = document.createElement("li")
-    movieLi.className = "movie"
-
-    movieLi.dataset.id = movieObj.id
-
-    movieLi.innerHTML = `
-      <h3>${movieObj.title}</h3>
-      <img alt=""
-          src="${movieObj.imageUrl}" />
-      <h4>Year: ${movieObj.year}</h4>
-      <h4>Genre: ${movieObj.genre}</h4>
-      <h4>Score: <span>${movieObj.score}</span> </h4>
-      <button class="up-vote">Up Vote</button>
-      <button>Down Vote</button>
-      <button data-purpose="delete" data-fav-color="turquoise">&times;</button>
-    `
-    
-    movieList.append(movieLi)
-  }
-
   const renderMovies = movieArray => {
-    movieArray.forEach(movieObj => {
-      renderMovie(movieObj)
+    movieArray.forEach(movie => {
+      movie.render(movieList)
+      // renderMovie(movieObj)
     })
   }
   
@@ -66,9 +45,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         .then(data => {
           deleteButton.parentElement.remove()
         })
-
-
-
 
       } else if(e.target.matches('#show-form')){
         const button = e.target
@@ -139,7 +115,10 @@ document.addEventListener("DOMContentLoaded", function(e){
     fetch(baseUrl)
     .then(response => response.json())
     .then(moviesCollection => {
-      renderMovies(moviesCollection)
+
+      const movies = Movie.createMovies(moviesCollection)
+      Movie.renderMovies(movies, movieList)
+      // renderMovies(movies)
     })
   }
   
