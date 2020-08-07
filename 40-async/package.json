@@ -1,0 +1,59 @@
+{
+  "name": "gif_search",
+  "version": "1.0.0",
+  "description": "Use the Giphy API and React",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dog": "echo 'Fido'",
+    "bundle": "node ./node_modules/webpack/bin/webpack.js --progress --colors",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./",
+    "test:watch": "npm run test -- --watch",
+    "eject": "react-scripts eject"
+  },
+  "babel": {
+    "presets": [
+      "airbnb",
+      "env",
+      "stage-0",
+      "react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/learn-co-curriculum/react-async-gif-search-lab.git"
+  },
+  "keywords": [
+    "react",
+    "fun"
+  ],
+  "author": "Ian Candy",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-airbnb": "^2.5.3",
+    "bootstrap": "^3.4.1",
+    "jsdom": "^9.9.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "^1.0.7",
+    "react-test-renderer": "^16.0.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babelify": "^7.3.0",
+    "bootstrap": "^3.4.1",
+    "jsdom": "^9.9.1",
+    "mocha": "^5.2.0",
+    "react-scripts": "^1.0.7",
+    "react-test-renderer": "^16.0.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^3.1.11"
+  }
+}
