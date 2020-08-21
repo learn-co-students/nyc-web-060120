@@ -35,6 +35,12 @@ option 3: action
 3. ClickHandler 
 4. Fetch 
 
+1. Store -- thunk, applyMiddleWare
+2. action/reducers
+    action => return a function that handles the fetch
+    reducer => take the payload and update state 
+3. mdp => Triggering a change in state 
+
 
 # Process
 - Prerequisite: Reading or Writing? 

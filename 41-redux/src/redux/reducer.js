@@ -5,6 +5,8 @@ const defaultState = {
     user: {}
 }
 
+
+
 function beyReducer(state = defaultState.beys, action) {
 
     switch (action.type) {
