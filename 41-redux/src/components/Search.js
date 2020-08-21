@@ -4,7 +4,7 @@ function Search(props) {
 
     return (
         <form>
-            <input type="text" value={props.searchValue} onChange={props.changeHandler} />
+            <input type="text" value={props.searchValue} onChange={props.changeHandler} placeholder="search" />
         </form>
     )
 }

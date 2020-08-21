@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BeyCard from './BeyCard'
+import BeyCard from '../components/BeyCard'
 
 export default class Favorites extends Component {
   render() {
@@ -12,3 +12,8 @@ export default class Favorites extends Component {
     );
   }
 }
+
+// function msp(state) {
+//   // let filteredBeys = // filter through state.beys for all the favorites
+//   return { beys: fitleredBeys  }
+// }

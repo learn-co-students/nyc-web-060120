@@ -1,9 +1,9 @@
 import React from "react";
-import BeyCard from './BeyCard'
+import { connect } from 'react-redux'
+import BeyCard from '../components/BeyCard'
 
 class BeyContainer extends React.Component {
   render() {
-    console.log("props in Container: ", this.props.beys)
     let allBeys = this.props.beys.map(bey => <BeyCard key={bey.id} bey={bey} clickHandler={this.props.clickHandler} />)
     return (
       <div className="index">
@@ -14,4 +14,8 @@ class BeyContainer extends React.Component {
   }
 }
 
-export default BeyContainer;
+function msp(state) {
+  return { beys: state.beys }
+}
+
+export default connect(msp)(BeyContainer);

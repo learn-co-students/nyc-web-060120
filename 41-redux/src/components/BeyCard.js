@@ -1,5 +1,5 @@
 import React from "react";
-
+import { connect } from 'react-redux'
 const BeyCard = (props) => {
 
   return (
@@ -10,5 +10,10 @@ const BeyCard = (props) => {
   );
 };
 
-export default BeyCard;
+
+function mdp(dispatch) {
+  return { clickHandler: () => dispatch() }
+}
+
+export default connect(null, mdp)(BeyCard);
 
